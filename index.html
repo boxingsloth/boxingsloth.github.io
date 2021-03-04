@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="home">
+	
+	<div class="row clearfix">
+    {%- if site.profile_image -%}
+      <div class="col-xs-12 col-sm-4 col-md-3 no-print">
+        <span class="profile-img" style="background-image: url('{{ site.profile_image | relative_url }}')" />
+      </div>
+    {%- endif -%}
+    	<div class="{{ 'col-xs-12 col-sm-8 col-md-9 col-print-12' }}{%- if site.profile_image -%}col-sm-8 col-md-9 col-print-12{%- endif -%}">
+      	I am an Electrical and Computer Engineering Ph.D. student in the <a href="https://mrel.usc.edu/">Magnetic Resonance Engineering Laboratory (MREL)</a> at the <a href="https://usc.edu/">University of Southern California (USC)</a>.
+    	</div>
+  </div>
+</div>
