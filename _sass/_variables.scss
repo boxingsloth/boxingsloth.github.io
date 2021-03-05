@@ -1,5 +1,5 @@
 // Typography
-$base-font-size: 14px !default;
+$base-font-size: 12px !default;
 $bold-font-weight: bold !default;
 $font-family: 'Merriweather', 'PT Serif', Georgia, 'Times New Roman', serif !default;
 $line-height: 1.5 !default;
@@ -51,9 +51,10 @@ $darken-1: rgba(#000,.0625) !default;
 $darken-2: rgba(#000,.125) !default;
 $darken-3: rgba(#000,.25) !default;
 $darken-4: rgba(#000,.5) !default;
+$cardinal: #9D2235 !default;
 
 // Links
-$link-color: $blue;
+$link-color: $cardinal;
 $link-hover-color: darken($blue, 40%);
 
 // Breakpoints
@@ -127,9 +128,9 @@ $nav-link-border-bottom: 2px solid #444;
 $nav-active-border-bottom: 1px solid $light-gray;
 
 // Footer
-$footer-border-top: thin solid #f3f3f3;
+$footer-border-top: 0px solid #f3f3f3;
 $footer-padding: $space-3;
 $footer-color: #7a7a7a;
-$footer-bg-color: #fafafa;
+$footer-bg-color: #FFFFFF;
 $footer-font-weight: 300;
 $footer-font-size: .75rem;

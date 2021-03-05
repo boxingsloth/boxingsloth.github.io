@@ -7,11 +7,14 @@ layout: default
 	<div class="row clearfix">
     {%- if site.profile_image -%}
       <div class="col-xs-12 col-sm-4 col-md-3 no-print">
-        <span class="profile-img" style="background-image: url('{{ site.profile_image | relative_url }}')" />
+        <img class="profile-img" src="{{ site.profile_image | relative_url }}" />
       </div>
     {%- endif -%}
     	<div class="{{ 'col-xs-12 col-sm-8 col-md-9 col-print-12' }}{%- if site.profile_image -%}col-sm-8 col-md-9 col-print-12{%- endif -%}">
-      	I am an Electrical and Computer Engineering Ph.D. student in the <a href="https://mrel.usc.edu/">Magnetic Resonance Engineering Laboratory (MREL)</a> at the <a href="https://usc.edu/">University of Southern California (USC)</a>.
+      	I am an Electrical and Computer Engineering Ph.D. student in the Magnetic Resonance Engineering Laboratory (<a href="https://mrel.usc.edu/">MREL</a>) at the University of Southern California (<a href="https://usc.edu/">USC</a>), where I am advised by Prof. <a href="https://viterbi.usc.edu/directory/faculty/Nayak/Krishna">Krishna S. Nayak</a >.
+		<br />
+		<br />
+	
     	</div>
   </div>
 </div>
