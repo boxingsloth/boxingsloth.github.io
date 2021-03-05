@@ -4,34 +4,48 @@ title: Publications
 permalink: /publication/
 tags: publication
 ---
-{% assign posts_count = paginator.posts | size %}
+
+{% assign journal_publications = site.publications | where: "type", "journal" | sort:'year' | reverse %}
+{% assign conference_publications = site.publications | where: "type", "conference" | sort:'year' | reverse %}
 
 <div class="home">
-  {% if posts_count > 0 %}
-    <div class="posts">
-      {% for post in paginator.posts %}
-        <div class="post py3">
-          <p class="post-meta">
-	    {% if site.date_format %}
-	      {{ post.date | date: site.date_format }}
-	    {% else %}
-	      {{ post.date | date: "%b %-d, %Y" }}
-	    {% endif %}
-	  </p>
-          <a href="{{ post.url | relative_url }}" class="post-link"><h3 class="h1 post-title">{{ post.title }}</h3></a>
-          <span class="post-summary">
-            {% if post.summary %}
-              {{ post.summary }}
-            {% else %}
-              {{ post.excerpt }}
-            {% endif %}
-          </span>
-        </div>
-      {% endfor %}
-    </div>
-
-    {% include pagination.html %}
-  {% else %}
-    <h1 class='center'>{{ site.text.index.coming_soon }}</h1>
-  {% endif %}
+	<div class="row clearfix">
+      <div class="col-xs-12 col-sm-4 col-md-3 no-print left-column">
+		  Journal
+	  </div>
+	  <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+		  {% for publication in journal_publications %}
+		  <div class="journal">
+		  	<span class="authors">{{ publication.authors }}.</span><br />
+		  	<span class="title">{{ publication.title }}.</span><br />
+			<span class="jname">{{ publication.venue }}.</span> <span class="jvolume">{{ publication.volume }}.</span>
+			{% if publication.link %}
+			<a href="{{ publication.link }}">JRNL</a>
+			{% endif %}
+			<br />
+			{% if publication.award %}
+			<span class="award">{{ publication.award }}.</span>
+			{% endif %}
+		  </div>
+		  {% endfor %}
+	  </div>
+  </div>
+	<div class="row clearfix">
+      <div class="col-xs-12 col-sm-4 col-md-3 no-print left-column">
+		  Conference
+	  </div>
+	  <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+			  {% for publication in conference_publications %}
+			  <div class="journal">
+			  	<span class="authors">{{ publication.authors }}.</span><br />
+			  	<span class="title">{{ publication.title }}.</span><br />
+				<span class="jname">{{ publication.venue }}.</span> <span class="year">{{ publication.year }}.</span><br />
+  			{% if publication.award != blank %}
+  			<span class="award">{{ publication.award }}</span>
+  			{% endif %}
+			  </div>
+			  {% endfor %}
+		  </div>
+	  </div>
+  </div>
 </div>

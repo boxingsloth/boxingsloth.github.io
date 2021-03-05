@@ -107,3 +107,6 @@ exclude:
   - README.md
   - screenshot.png
   - vendor
+  
+collections:
+  - publications
